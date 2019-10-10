@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
 
     Button btnCamera;
     ImageView imgCamera;
+    Button btnClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivityForResult(cameraIntent, 0);
             }
         });*/
+
     }
+
 
     /*
     @Override
