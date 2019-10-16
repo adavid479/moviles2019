@@ -34,9 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    Button btnCamera;
-    ImageView imgCamera;
-    Button btnClose;
+    Button btnCloseSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,28 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        /*btnCamera = (Button) findViewById(R.id.btnCamera);
-        imgCamera = (ImageView) findViewById(R.id.imgCamera);
-
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, 0);
-            }
-        });*/
-
     }
-
-
-    /*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-        imgCamera.setImageBitmap(bitmap);
-    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

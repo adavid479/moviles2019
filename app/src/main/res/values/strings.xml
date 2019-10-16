@@ -21,4 +21,5 @@
     <string name = "register">REGISTRAR</string>
     <string name = "cancel">CANCELAR</string>
     <string name = "rpPassword">Repita contrasena</string>
+    <string name = "closeSession">CERRAR SESION</string>
 </resources>
