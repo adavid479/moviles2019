@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_1 = "id";
     public static final String COL_2 = "username";
     public static final String COL_3 = "password";
+    public static final String COL_4 = "email";
 
 
     public DatabaseHelper(Context context) {
@@ -24,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE RegisterUser (id INTEGER PRIMARY KEY AUTOINCREMENT, userName TEXT, password TEXT)");
+        db.execSQL("CREATE TABLE RegisterUser (id INTEGER PRIMARY KEY AUTOINCREMENT, userName TEXT, password TEXT, email TEXT)");
     }
 
     @Override
@@ -38,6 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, user.getUsername());
         contentValues.put(COL_3, user.getPassword());
+        contentValues.put(COL_4, user.getEmail());
         long res = db.insert(TABLE_NAME, null, contentValues);
         db.close();
         return res;
@@ -56,5 +58,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    public User getUser(Integer id){
+        User user = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = COL_1 + "=?";
+        String[] selectionArgs = {id.toString()};
+        Cursor cursor = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
+        while(cursor.moveToNext()){
+            user = new User();
+            user.setUsername(cursor.getString(1));
+            user.setPassword(cursor.getString(2));
+            user.setEmail(cursor.getString(3));
+        }
+        return user;
+    }
+
+    public void dropTable(String tableName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + tableName);
     }
 }

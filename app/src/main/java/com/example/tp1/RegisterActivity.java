@@ -15,9 +15,7 @@ import com.tp1.persist.DatabaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText username;
-    EditText password;
-    EditText rpPassword;
+    EditText username, password, rpPassword, txtEmail;
     Button buttonRegister;
     Button buttonCancel;
 
@@ -35,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         rpPassword = (EditText) findViewById(R.id.rpPassword);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonCancel = (Button) findViewById(R.id.buttonCancel);
+        txtEmail = findViewById(R.id.txtEmail);
 
         dbHelper = new DatabaseHelper(this);
 
@@ -53,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user = new User();
                 user.setUsername(username.getText().toString());
                 user.setPassword(password.getText().toString());
+                user.setEmail(txtEmail.getText().toString());
 
                 if(!password.getText().toString().equals(rpPassword.getText().toString()))
                     Toast.makeText(RegisterActivity.this, "Las contrasenas no coinciden", Toast.LENGTH_SHORT).show();

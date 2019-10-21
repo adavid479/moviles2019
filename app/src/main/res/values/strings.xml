@@ -14,12 +14,14 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name = "user">Usuario</string>
-    <string name = "password">Contrasena</string>
-    <string name = "enter">ENTRAR</string>
-    <string name = "checkIn">Registrarse</string>
-    <string name = "register">REGISTRAR</string>
-    <string name = "cancel">CANCELAR</string>
-    <string name = "rpPassword">Repita contrasena</string>
-    <string name = "closeSession">CERRAR SESION</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contrasena</string>
+    <string name="enter">ENTRAR</string>
+    <string name="checkIn">Registrarse</string>
+    <string name="register">REGISTRAR</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="rpPassword">Repita contrasena</string>
+    <string name="closeSession">CERRAR SESION</string>
+    <string name="update">ACTUALIZAR</string>
+    <string name="email">E-mail</string>
 </resources>

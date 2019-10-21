@@ -34,8 +34,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    Button btnCloseSession;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +66,10 @@ public class HomeActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.action_settings){
             Intent settingsIntent = new Intent(HomeActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
+        }
+        if(item.getItemId() == R.id.actionAccount){
+            Intent accountIntent = new Intent(HomeActivity.this, AccountActivity.class);
+            startActivity(accountIntent);
         }
         return super.onOptionsItemSelected(item);
     }

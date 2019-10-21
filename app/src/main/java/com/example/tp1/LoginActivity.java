@@ -15,8 +15,7 @@ import com.tp1.persist.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText username;
-    EditText password;
+    EditText username, password;
     Button  buttonEnter;
     TextView register;
 
