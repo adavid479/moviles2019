@@ -45,19 +45,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    public boolean checkUser(User user){
+    public Integer checkUser(User user){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {COL_1};
         String selection = COL_2 + "=?" + " and " + COL_3 + "=?";
         String[] selectionArgs = {user.getUsername(), user.getPassword()};
-        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
         int res = cursor.getCount();
+        int id = 0;
+        while (cursor.moveToNext()){
+            id = cursor.getInt(0);
+        }
         cursor.close();
         db.close();
         if(res > 0)
-            return true;
+            return id;
         else
-            return false;
+            return 0;
     }
 
     public User getUser(Integer id){
@@ -78,5 +82,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void dropTable(String tableName){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + tableName);
+    }
+
+    public void updateUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2, user.getUsername());
+        contentValues.put(COL_3, user.getPassword());
+        contentValues.put(COL_4, user.getEmail());
+        String selection = COL_1 + "=?";
+        String[] selectionArgs = {user.getId().toString()};
+        db.update(TABLE_NAME, contentValues, selection, selectionArgs);
     }
 }

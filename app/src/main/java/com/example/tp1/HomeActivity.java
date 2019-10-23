@@ -69,6 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         if(item.getItemId() == R.id.actionAccount){
             Intent accountIntent = new Intent(HomeActivity.this, AccountActivity.class);
+            accountIntent.putExtra("id", getIntent().getExtras().getInt("id"));
             startActivity(accountIntent);
         }
         return super.onOptionsItemSelected(item);

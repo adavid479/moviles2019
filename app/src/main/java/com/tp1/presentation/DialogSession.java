@@ -1,4 +1,4 @@
-package com.example.tp1;
+package com.tp1.presentation;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -12,7 +12,7 @@ public class DialogSession extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
-        builder.setTitle("Information");
+        builder.setTitle("Verificar Contrasena");
         builder.setMessage("Sesion cerrada");
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
             @Override

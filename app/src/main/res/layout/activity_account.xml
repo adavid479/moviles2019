@@ -2,25 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="110sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Usuario:"/>
+            android:gravity="right"
+            android:text="@string/userp"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/txtUser"
-            android:layout_width="100sp"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,15 +30,17 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="110sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Contrasena:"/>
+            android:gravity="right"
+            android:text="@string/passwordp"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/txtPassword"
-            android:layout_width="100sp"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,23 +48,26 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="110sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="E-mail:"/>
+            android:gravity="right"
+            android:text="@string/emailp"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="25sp"
-        android:textSize="32sp"
-        android:text="@string/update"/>
+        android:text="@string/update"
+        android:textSize="32sp" />
 
 
 </LinearLayout>

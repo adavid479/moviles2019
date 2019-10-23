@@ -1,6 +1,7 @@
 package com.tp1.model;
 
 public class User {
+    Integer id;
     String username;
     String password;
     String email;
@@ -27,5 +28,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

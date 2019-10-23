@@ -24,4 +24,7 @@
     <string name="closeSession">CERRAR SESION</string>
     <string name="update">ACTUALIZAR</string>
     <string name="email">E-mail</string>
+    <string name="userp">Usuario:</string>
+    <string name="passwordp">Contrasena:</string>
+    <string name="emailp">E-mail:</string>
 </resources>

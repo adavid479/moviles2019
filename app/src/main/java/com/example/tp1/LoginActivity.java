@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tp1.bussines.UserBO;
 import com.tp1.model.User;
 import com.tp1.persist.DatabaseHelper;
 
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     User user;
 
     DatabaseHelper dbHelper;
+    UserBO userBO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         buttonEnter = (Button) findViewById(R.id.buttonEnter);
         register = (TextView) findViewById(R.id.register);
 
-        dbHelper = new DatabaseHelper(this);
+        //dbHelper = new DatabaseHelper(this);
+        userBO = new UserBO(this);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +52,12 @@ public class LoginActivity extends AppCompatActivity {
                 user = new User();
                 user.setUsername(username.getText().toString());
                 user.setPassword(password.getText().toString());
+                int id = userBO.checkUser(user);
 
-                if(dbHelper.checkUser(user)){
+                if(id != 0){
                     Toast.makeText(LoginActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
                     Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                    homeIntent.putExtra("id", id);
                     startActivity(homeIntent);
                 }else
                     Toast.makeText(LoginActivity.this, "Usuario y/o contrasena incorrectos", Toast.LENGTH_SHORT).show();
